@@ -42,3 +42,24 @@
 | 50 5 5 5 |       |
 +----------+-------+
 '''
+def Coins(s):
+    l = list(map(int, s.split()))
+
+    coins=0
+    extra=0
+    for n in l:
+        if n == 5:
+            extra += 1
+        else:
+            need = int((n - 5) / 5)
+            if extra > need:
+                extra -= need
+                need = 0
+            else:
+                need -= extra
+                extra = 0
+            coins += need
+    return coins
+
+input()
+print(Coins(input()))
