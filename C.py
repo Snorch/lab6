@@ -25,3 +25,18 @@
   | -40 41 -42 -41 42 40 |       |
   +----------------------+-------+
 '''
+def Slippers(s):
+    l = list(map(int, s.split()))
+    dmin = None
+
+    for i, v in enumerate(l[:-1]):
+        if v >= 0 or -v not in l[i + 1:]:
+            continue;
+        dist = l[i + 1:].index(-v) + 1
+        if dmin is None or dmin > dist:
+            dmin = dist
+
+    return dmin
+
+input()
+print(Slippers(input()))
