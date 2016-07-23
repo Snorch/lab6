@@ -61,5 +61,7 @@ def Coins(s):
             coins += need
     return coins
 
-input()
-print(Coins(input()))
+fi = open('input.txt', 'r')
+fo = open('output.txt', 'w')
+fi.readline()
+print(Coins(fi.readline()), file=fo)

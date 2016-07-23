@@ -38,5 +38,7 @@ def Slippers(s):
 
     return dmin
 
-input()
-print(Slippers(input()))
+fi = open('input.txt', 'r')
+fo = open('output.txt', 'w')
+fi.readline()
+print(Slippers(fi.readline()), file=fo)

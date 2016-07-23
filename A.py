@@ -23,5 +23,7 @@ def Repeated(s):
             return v
     return -1
 
-input()
-print(Repeated(input()))
+fi = open('input.txt', 'r')
+fo = open('output.txt', 'w')
+fi.readline()
+print(Repeated(fi.readline()), file=fo)
