@@ -36,6 +36,8 @@ def Slippers(s):
         if dmin is None or dmin > dist:
             dmin = dist
 
+    if dmin is None:
+        return 0
     return dmin
 
 fi = open('input.txt', 'r')
