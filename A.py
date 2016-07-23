@@ -16,3 +16,12 @@
 | 8 3 5 4 5 1 |       |
 +-------------+-------+
 '''
+def Repeated(s):
+    l = list(map(int, s.split()))
+    for v in l:
+        if l.count(v) == 2:
+            return v
+    return -1
+
+input()
+print(Repeated(input()))
