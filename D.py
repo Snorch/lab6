@@ -25,3 +25,22 @@
 | 6 4 6 3 |           |
 +---------+-----------+
 '''
+def VMin(ll, k, n):
+    vmin = ll[0]
+
+    for l in ll[1:]:
+        for i, v in enumerate(l):
+            if v < vmin[i]:
+                vmin[i] = v
+
+    return vmin
+
+
+fi = open('input.txt', 'r')
+fo = open('output.txt', 'w')
+k, n = map(int, fi.readline().split())
+l = []
+for i in range(k):
+    l.append(list(map(int, fi.readline().split())))
+
+print(" ".join(list(map(str, VMin(l, k, n)))), file=fo)
