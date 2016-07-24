@@ -38,3 +38,19 @@
 | 3 1 100 |            |
 +---------+------------+
 '''
+def Debts(L, K, N):
+    debts = [0] * N
+    print(debts)
+    for l in L:
+        debts[l[0] - 1] -= l[2]
+        debts[l[1] - 1] += l[2]
+    return debts
+
+fi = open('input.txt', 'r')
+fo = open('output.txt', 'w')
+N, K = list(map(int, fi.readline().split()))
+L = []
+for i in range(K):
+    L.append(list(map(int, fi.readline().split())))
+
+print(" ".join(list(map(str, Debts(L, K, N)))), file=fo)
